@@ -1,0 +1,249 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   background: linear-gradient(to bottom,
+      #009688 0px,
+      #009688 15vh,
+      #DDDBD1 15vh,
+      #D2DBDC 100%);
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+}
+
+.big-container{
+   width: 90vw;
+   height: 95vh;
+   display: flex;
+}
+
+
+.container{
+   width: 35%;
+   min-width: 400px;
+}
+
+.personal{
+   height: 80px;
+   border-right: 1px solid lightgrey;
+   background-color: #EAEAEA;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.info{
+   display: flex;
+   align-items: center;
+}
+
+.info > img{
+   width: 40px;
+   border-radius: 50%;
+   margin-left: 10px;
+
+}
+
+.info > span{
+   margin-left: 10px;
+   font-weight: bold;
+}
+
+.icon > i{
+   color: #B1B1B1;
+   font-size: 20px;
+   margin-right: 20px;
+
+}
+
+/*notifiche*/
+
+.notification{
+   height: 80px;
+   background-color: #8EDAFC;
+   display: flex;
+   align-items: center;
+}
+
+.camp{
+   height: 20px;
+   width: 50px;
+   background-color: white;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-left: 10px;
+}
+
+.camp > i {
+   color: #8EDAFC;
+   font-size: 20px;
+}
+
+.switch {
+   margin-left: 10px;
+}
+
+.switch > div{
+   font-weight: bold;
+}
+
+.switch > a{
+   color: #4F7485;
+}
+
+/*SEARCH*/
+
+.search{
+   height: 50px;
+   background-color: #FAFAFA;
+   display: flex;
+   align-items: center;
+}
+
+.searchbarra{
+   background-color: white;
+   width: 100%;
+   margin: 10px;
+   padding: 10px;
+
+}
+
+.searchbarra > i{
+   color: #B1B1B1;
+
+   margin-right: 20px;
+}
+
+.searchbarra > input{
+   width: 300px;
+   border: none;
+   outline: none;
+}
+
+/*contatti*/
+
+.contatti{
+   height: calc(100% - 80px - 30px - 100px);
+   background-color: white;
+   overflow: scroll;
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+
+.my-contacts{
+   display: flex;
+   padding: 10px;
+   border-bottom: 1px solid lightgrey;
+}
+
+.my-contacts > img{
+   width: 70px;
+   border-radius: 50%;
+}
+
+.my-contacts > span{
+   margin-left: 20px;
+   font-weight: bold;
+}
+
+/* chat */
+
+.chat-container{
+   width: 65%;
+   min-width: 800px;
+   overflow:hidden;
+}
+
+/* INFO */
+
+.info-chat{
+   height: 80px;
+   background-color: #EAEAEA;
+}
+
+.chat{
+   height: 80px;
+   background-color: #EAEAEA;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.data-chat{
+   display: flex;
+   align-items: center;
+}
+
+.data-chat > img{
+   width: 50px;
+   border-radius: 50%;
+   margin-left: 10px;
+
+}
+
+.data-chat > span{
+   margin-left: 10px;
+   font-weight: bold;
+}
+
+.icon > i{
+   color: #B1B1B1;
+   font-size: 20px;
+   margin-right: 20px;
+
+}
+
+.data-chat > .user > span {
+   font-weight: bold;
+}
+
+.data > .user > div {
+   color: #B1B1B1;
+   font-size: 12px;
+   font-weight: bold;
+}
+
+.data-chat> div{
+   margin-left: 10px;
+}
+
+
+.input{
+   background-color: #F3EEEA;
+   height: 80px;
+}
+
+.chat-box{
+   height: calc(100% - 160px);
+   background-image: url('../img/mine.jpg');
+}
+
+
+
+.input{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.input input{
+   width: 100%;
+   outline: none;
+   padding: 20px;
+   border-radius: 5px;
+   border: none;
+}
+
+.input i{
+   margin: 0 20px;
+   font-size: 20px;
+   color: #6B7376;
+}

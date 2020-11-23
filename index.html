@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Boolzapp</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+         <div id="root" class="big-container">
+
+<!--inizio-->
+
+            <div class="container">
+               <div class="personal">
+                  <div class="info">
+                     <img :src="user.avatar" alt="Avatar">
+                     <span>{{user.name}}</span>
+                  </div>
+                  <div class="incon">
+                     <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+                     <i class="fa fa-comment" aria-hidden="true"></i>
+                     <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+               </div>
+
+<!--notifiche-->
+
+               <div class="notification">
+                  <div class="camp">
+                     <i class="fa fa-bell-slash" aria-hidden="true"></i>
+                  </div>
+                  <div class="switch">
+                     <div>Ricevi notifiche di nuovi messaggi</div>
+                     <a href="#">Attiva notifiche dekstop</a>
+                  </div>
+               </div>
+
+<!-- search-->
+
+               <div class="search">
+                  <div class="searchbarra">
+                     <i class="fa fa-search" aria-hidden="true"></i>
+                     <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+                  </div>
+               </div>
+
+<!--contatti-->
+
+               <div class="contatti">
+                  <div @click="pickActive(contact,index)" v-for="(contact,index) in contactsArray" class="my-contacts">
+                     <img :src="contact.avatar" alt="Immagine Contatto">
+                     <span>{{contact.name}}</span>
+                  </div>
+               </div>
+            </div>
+
+
+<!--chat -->
+            <div class="chat-container">
+
+               <div class="info-chat">
+                  <div class="chat">
+                     <div class="data-chat">
+                        <img :src="contactsArray[concact].avatar" alt="Avatar personale">
+                        <div class="user">
+                           <span>{{contactsArray[concact].name}}</span>
+                           <div>Ultimo accesso oggi alle</div>
+                        </div>
+                     </div>
+                     <div class="icon">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                     </div>
+                  </div>
+               </div>
+
+<!-- BOX SECTION  -->
+
+               <div class="chat-box">
+                  <ul>
+                     <li v-for="message in contactsArray[concact].chat">
+                        {{message}}
+                     </li>
+                  </ul>
+               </div>
+
+<!-- INPUT SECTION  -->
+
+               <div class="input">
+                  <i class="fa fa-smile-o" aria-hidden="true"></i>
+                  <input @keyup.enter="write" type="text"  placeholder="Scrivi un messaggio" v-model="message">
+                  <i class="fa fa-microphone" aria-hidden="true"></i>
+               </div>
+            </div>
+         </div>
+      <script src="js/main.js"></script>
+   </body>
+</html>
