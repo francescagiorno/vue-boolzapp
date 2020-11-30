@@ -16,17 +16,17 @@
             <div class="container">
                <div class="personal">
                   <div class="info">
-                     <img :src="user.avatar" alt="Avatar">
-                     <span>{{user.name}}</span>
+                     <img :src="mainUser.avatar" alt="Avatar personale">
+                     <span>{{mainUser.name}}</span>
                   </div>
-                  <div class="incon">
+                  <div class="icon">
                      <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
                      <i class="fa fa-comment" aria-hidden="true"></i>
                      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                   </div>
                </div>
 
-<!--notifiche-->
+<!--notification-->
 
                <div class="notification">
                   <div class="camp">
@@ -38,39 +38,43 @@
                   </div>
                </div>
 
-<!-- search-->
+<!--search-->
 
                <div class="search">
-                  <div class="searchbarra">
+                  <div class="searchbar">
                      <i class="fa fa-search" aria-hidden="true"></i>
-                     <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+                     <input @input="search" @keyup.delete="cancel" v-model="actualSearch" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
                   </div>
                </div>
 
 <!--contatti-->
 
                <div class="contatti">
-                  <div @click="pickActive(contact,index)" v-for="(contact,index) in contactsArray" class="my-contacts">
-                     <img :src="contact.avatar" alt="Immagine Contatto">
-                     <span>{{contact.name}}</span>
-                  </div>
+                  <ul class="my-contacts">
+                     <li @click="pickActive(index)" v-for="(contact,index) in contactsArray" :class="[{active : contact.isActive},contact.filt]">
+                        <a href="#">
+                           <img :src="contact.avatar" alt="Immagine Contatto">
+                           <span>{{contact.name}}</span>
+                        </a>
+                     </li>
+                  </ul>
                </div>
             </div>
 
-
-<!--chat -->
             <div class="chat-container">
+
+<!--info chat-->
 
                <div class="info-chat">
                   <div class="chat">
                      <div class="data-chat">
-                        <img :src="contactsArray[concact].avatar" alt="Avatar personale">
+                        <img :src="contactsArray[activeContact].avatar" alt="Avatar personale">
                         <div class="user">
-                           <span>{{contactsArray[concact].name}}</span>
+                           <span>{{contactsArray[activeContact].name}}</span>
                            <div>Ultimo accesso oggi alle</div>
                         </div>
                      </div>
-                     <div class="icon">
+                     <div class="icon-chat">
                         <i class="fa fa-search" aria-hidden="true"></i>
                         <i class="fa fa-paperclip" aria-hidden="true"></i>
                         <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
@@ -78,21 +82,24 @@
                   </div>
                </div>
 
-<!-- BOX SECTION  -->
+<!--box-->
 
-               <div class="chat-box">
-                  <ul>
-                     <li v-for="message in contactsArray[concact].chat">
-                        {{message}}
+               <div class="box">
+                  <ul v-if="show" class="contact-chat">
+                     <li v-for="el in contactsArray[activeContact].chat" :class="el.status">
+                        <div class="message" :class="el.status">
+                           <span>{{el.msg}}</span>
+                           <div>{{el.dataMsg}}</div>
+                        </div>
                      </li>
                   </ul>
                </div>
 
-<!-- INPUT SECTION  -->
+<!--input-->
 
                <div class="input">
                   <i class="fa fa-smile-o" aria-hidden="true"></i>
-                  <input @keyup.enter="write" type="text"  placeholder="Scrivi un messaggio" v-model="message">
+                  <input @keyup.enter="write" type="text"  placeholder="Scrivi un messaggio" v-model="actualMsg">
                   <i class="fa fa-microphone" aria-hidden="true"></i>
                </div>
             </div>

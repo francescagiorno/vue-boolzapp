@@ -44,7 +44,7 @@ body{
 }
 
 .info > img{
-   width: 40px;
+   width: 50px;
    border-radius: 50%;
    margin-left: 10px;
 
@@ -62,17 +62,17 @@ body{
 
 }
 
-/*notifiche*/
+/*notification*/
 
 .notification{
-   height: 80px;
+   height: 100px;
    background-color: #8EDAFC;
    display: flex;
    align-items: center;
 }
 
 .camp{
-   height: 20px;
+   height: 50px;
    width: 50px;
    background-color: white;
    border-radius: 50%;
@@ -99,7 +99,7 @@ body{
    color: #4F7485;
 }
 
-/*SEARCH*/
+/*search*/
 
 .search{
    height: 50px;
@@ -108,7 +108,7 @@ body{
    align-items: center;
 }
 
-.searchbarra{
+.searchbar{
    background-color: white;
    width: 100%;
    margin: 10px;
@@ -116,13 +116,13 @@ body{
 
 }
 
-.searchbarra > i{
+.searchbar > i{
    color: #B1B1B1;
 
    margin-right: 20px;
 }
 
-.searchbarra > input{
+.searchbar > input{
    width: 300px;
    border: none;
    outline: none;
@@ -131,38 +131,44 @@ body{
 /*contatti*/
 
 .contatti{
-   height: calc(100% - 80px - 30px - 100px);
+   height: calc(100% - 80px - 50px - 100px);
    background-color: white;
    overflow: scroll;
    overflow-x: hidden;
    overflow-y: auto;
 }
 
-.my-contacts{
+.my-contacts li a{
+   text-decoration: none;
+   color: black;
+}
+
+.my-contacts li a{
    display: flex;
    padding: 10px;
    border-bottom: 1px solid lightgrey;
 }
 
-.my-contacts > img{
+.my-contacts li a > img{
    width: 70px;
    border-radius: 50%;
 }
 
-.my-contacts > span{
+.my-contacts li a > span{
    margin-left: 20px;
    font-weight: bold;
 }
 
-/* chat */
+.active{
+   background-color: #E9EBEB;
+}
+
 
 .chat-container{
    width: 65%;
    min-width: 800px;
    overflow:hidden;
 }
-
-/* INFO */
 
 .info-chat{
    height: 80px;
@@ -194,7 +200,7 @@ body{
    font-weight: bold;
 }
 
-.icon > i{
+.icon-chat > i{
    color: #B1B1B1;
    font-size: 20px;
    margin-right: 20px;
@@ -205,13 +211,13 @@ body{
    font-weight: bold;
 }
 
-.data > .user > div {
+.data-chat > .user > div {
    color: #B1B1B1;
    font-size: 12px;
    font-weight: bold;
 }
 
-.data-chat> div{
+.data-chat > div{
    margin-left: 10px;
 }
 
@@ -221,12 +227,48 @@ body{
    height: 80px;
 }
 
-.chat-box{
+/* box */
+
+.box{
    height: calc(100% - 160px);
    background-image: url('../img/mine.jpg');
+   padding: 50px 100px;
+   overflow-y: auto;
 }
 
+.contact-chat{
+   list-style: none;
+}
 
+.contact-chat li{
+   margin-top: 20px;
+   display: flex;
+}
+
+.contact-chat .message{
+   padding: 15px;
+   border-radius: 10px;
+   width: 350px;
+}
+
+.contact-chat .message > div{
+   display: flex;
+   justify-content: flex-end;
+   font-size: 12px;
+   color: grey;
+}
+
+.contact-chat .message.received {
+   background-color: white;
+}
+
+.contact-chat .message.sent {
+   background-color: #D5F9BA;
+}
+
+.contact-chat li.sent {
+   justify-content: flex-end;
+}
 
 .input{
    display: flex;
@@ -246,4 +288,12 @@ body{
    margin: 0 20px;
    font-size: 20px;
    color: #6B7376;
+}
+
+.show{
+   display: block;
+}
+
+.hide{
+   display: none;
 }
